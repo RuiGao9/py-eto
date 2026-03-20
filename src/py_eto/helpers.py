@@ -34,5 +34,42 @@ def calc_ra(latitude, doy, year):
         ws * np.sin(lat_rad) * np.sin(ds) + 
         np.cos(lat_rad) * np.cos(ds) * np.sin(ws)
     )
-    
     return ra
+
+
+def calc_delta(t_mean):
+    """Calculate slope of saturation vapor pressure curve (delta), kPa/°C"""
+    es = 0.6108 * np.exp((17.27 * t_mean) / (t_mean + 237.3))
+    delta = (4098 * es) / ((t_mean + 237.3) ** 2)
+    return delta
+
+
+def calc_pressure(elevation):
+    """Calculate atmospheric pressure (P), kPa"""
+    return 101.3 * ((293 - 0.0065 * elevation) / 293) ** 5.26
+
+
+def calc_es_ea(t_max, t_min, rh_avg=None, rh_max=None, rh_min=None):
+    """Calculate saturation vapor pressure (es) and actual vapor pressure (ea)"""
+    es_tmax = 0.6108 * np.exp((17.27 * t_max) / (t_max + 237.3))
+    es_tmin = 0.6108 * np.exp((17.27 * t_min) / (t_min + 237.3))
+    es = (es_tmax + es_tmin) / 2
+    if rh_avg is not None:
+        ea = (rh_avg / 100) * es
+    elif rh_max is not None and rh_min is not None:
+        ea = (es_tmin * (rh_max / 100) + es_tmax * (rh_min / 100)) / 2
+    else:
+        raise ValueError("Either rh_avg or both rh_max and rh_min must be provided.")
+    return es, ea
+
+
+def calc_gamma(pressure, t_mean=None):
+    """Calculate psychrometric constant (gamma), kPa/°C"""
+    cp = 1.013e-3  # Specific heat of moist air, MJ/kg/°C
+    epsilon = 0.622  # Ratio of molecular weight of water vapor/dry air
+    if t_mean is not None:
+        lambda_v = 2.501 - 0.002361 * t_mean  # Latent heat of vaporization, MJ/kg
+    else:
+        lambda_v = 2.45  # Default value at 20°C
+    tmp = cp / (epsilon * lambda_v)
+    return tmp * pressure
