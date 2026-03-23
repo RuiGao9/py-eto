@@ -32,7 +32,7 @@ where:<br>
 <em>Figure 1. Conceptual framework of the Penman-Monteith workflow, which is easy to understand how to use values from meteorological stations for $ET_o$ calculation. 
 </p>
 
-### Calculation of the slope of the saturation vapor pressure curve ($kPa/\degree C$)
+### Calculation of the slope of the saturation vapor pressure curve 
 
 $$\Delta=\frac{4098 \cdot e_s(T)}{(T+237.3)^2}$$
 
