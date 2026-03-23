@@ -50,7 +50,7 @@ def calc_pressure(elevation):
     return 101.3 * ((293 - 0.0065 * elevation) / 293) ** 5.26
 
 
-def calc_es_ea(t_max, t_min, rh_avg=None, rh_max=None, rh_min=None):
+def calc_es_ea_no_mean(t_max, t_min, rh_avg=None, rh_max=None, rh_min=None):
     """Calculate saturation vapor pressure (es) and actual vapor pressure (ea)"""
     es_tmax = 0.6108 * np.exp((17.27 * t_max) / (t_max + 237.3))
     es_tmin = 0.6108 * np.exp((17.27 * t_min) / (t_min + 237.3))
@@ -64,6 +64,13 @@ def calc_es_ea(t_max, t_min, rh_avg=None, rh_max=None, rh_min=None):
     return es, ea
 
 
+def calc_es_ea(t_mean, rh):
+    """Calculate saturation vapor pressure (es) and actual vapor pressure (ea) using mean temperature and relative humidity"""
+    es = 0.6108 * np.exp((17.27 * t_mean) / (t_mean + 237.3))
+    ea = (rh / 100) * es
+    return es, ea
+
+
 def calc_gamma(pressure, t_mean=None):
     """Calculate psychrometric constant (gamma), kPa/°C"""
     cp = 1.013e-3  # Specific heat of moist air, MJ/kg/°C
@@ -74,3 +81,4 @@ def calc_gamma(pressure, t_mean=None):
         lambda_v = 2.45  # Default value at 20°C
     tmp = cp / (epsilon * lambda_v)
     return tmp * pressure
+

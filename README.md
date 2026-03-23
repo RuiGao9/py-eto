@@ -65,7 +65,7 @@ Gao, R., Khan, M., & Viers, J. (2026). A Python Toolkit for Reference Evapotrans
 
 ## Repository update information
 - Creation date: 2026-03-20
-- Last update: 2026-03-21
+- Last update: 2026-03-23
 - **Contact:** If you encounter any issues or have questions, please contact Rui Gao:
     - Rui.Ray.Gao@gmail.com
     - RuiGao@ucmerced.edu
