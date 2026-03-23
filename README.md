@@ -32,7 +32,7 @@ where:<br>
 <em>Figure 1. Conceptual framework of the Penman-Monteith workflow, which is easy to understand how to use values from meteorological stations for $ET_o$ calculation. 
 </p>
 
-### Calculation of the slope of the saturation vapor pressure curve 
+### Calculation of the slope of the saturation vapor pressure curve ($kPa/^\circ C$)
 
 $$\Delta=\frac{4098 \cdot e_s(T)}{(T+237.3)^2}$$
 
@@ -47,10 +47,10 @@ $$e_a(T)=e_s(T)\cdot \frac{RH}{100}$$
 
 where the $RH$: relative humidity (%), `required input`
 
-### Calculation of the psychrometric constant ($kPa/\degree C$)
+### Calculation of the psychrometric constant ($kPa/^\circ C$)
 $$\gamma=\frac{c_p\cdot P}{\epsilon \cdot \lambda}$$ 
 where:
-- $c_p$: specific heat of moist air, $~1.013 \times 10^{-3}MJ/kg/\degree C$
+- $c_p$: specific heat of moist air, $~1.013 \times 10^{-3}MJ/kg/^\circ C$
 - $\epsilon$: the ratio of molecular weight of water vapor to dry air, $~0.622$
 - $\lambda$: the latent heat of vaporization, $2.45~MJ/kg$
 - $P$: atmospheric pressure (kPa), `optional input`
