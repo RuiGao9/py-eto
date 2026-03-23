@@ -22,6 +22,7 @@ where:<br>
 - $\gamma$: psychrometric constant ($kPa/\degree C$), `can be calculated`
 - ---
 - $C_n, C_d$: they are parameters which can be found in the [Table 8-1](https://doi.org/10.1061/9780784414057) below. For California (e.g., CIMIS), the short-reference parameter is used: $C_n=900, C_d=0.34$
+
 <p align="center">
 <img src="Figures/Table8-1.png" width="350" title="Table 8-1">
 </p>
@@ -29,7 +30,7 @@ where:<br>
 <p align="center">
 <img src="Figures/PM-ETo.PNG" width="350" title="FAO-56">
 
-<em>Figure 1. Conceptual framework of the Penman-Monteith workflow, which is easy to understand how to use values from meteorological stations for $ET_o$ calculation. 
+<em>Figure 1. Conceptual framework of the Penman-Monteith workflow, which is easy to understand how to use values from meteorological stations for $ET_o$ calculation. </em>
 </p>
 
 ### Calculation of the slope of the saturation vapor pressure curve ($kPa/^\circ C$)
@@ -41,9 +42,9 @@ where:
 - $e_s(T)$: saturation vapor pressure at temperature T ($\degree C$), in $kPa$, `can be calculated` as below
 
 ### Calculation of the saturation and actual vapor pressure ($kPa$)
-$$e_s(T)=0.6108e^{\frac{17.27\cdot T}{T+237.3}}$$
+$$e_s(T)=0.6108e^{\frac{17.27 \cdot T}{T+237.3}}$$
 
-$$e_a(T)=e_s(T)\cdot \frac{RH}{100}$$ 
+$$e_a(T)=e_s(T) \cdot \frac{RH}{100}$$ 
 
 where the $RH$: relative humidity (%), `required input`
 
