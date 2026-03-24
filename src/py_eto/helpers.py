@@ -83,7 +83,7 @@ def calc_gamma(pressure, t_mean=None):
     return tmp * pressure
 
 
-def convert_rn(Rn):
+def convert_energy(energy):
     """Convert Wm-2 to MJ/m2/day at daily scale"""
     # Convert W/m2 to MJ/m2/day
-    return Rn * 0.0036
+    return energy * 0.0036
