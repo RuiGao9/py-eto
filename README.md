@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxxx)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19197914.svg)](https://doi.org/10.5281/zenodo.19197914)
 ![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/****)<br>
 
 # A Python Toolkit for Reference Evapotranspiration ($ET_o$) Calculation Directly from Pandas DataFrames
@@ -65,13 +65,21 @@ $$P=101.3\times{\frac{293-0.0065\times h}{293}}^{5.26}$$
 
 ## Hargreaves Method (daily)
 
+$$ETo=0.0023 \cdot R_a \cdot (T_{mean}+17.8) \cdot \sqrt{T_{max} - T_{min}}$$
+
+where:
+- $0.0023$: the empirical value
+- $T_{max}$: the maximum temperature in that day ($\degree C$)
+- $T_{min}$: the minimum temperature in that day ($\degree C$)
+- $T_{mean}$: the average temperature in that day ($\degree C$)
+- $R_a$: extraterrestrial radiation
 
 ## Reference
 - Task Committee on Revision of Manual 70. (2016, April). Evaporation, evapotranspiration, and irrigation water requirements. American Society of Civil Engineers.
 - Torres, A. F., Walker, W. R., & McKee, M. (2011). Forecasting daily potential evapotranspiration using machine learning and limited climatic data. Agricultural Water Management, 98(4), 553-562.
 
 ## How to cite this work
-Gao, R., Khan, M., & Viers, J. (2026). A Python Toolkit for Reference Evapotranspiration ($ET_o$) Calculation Directly from Pandas DataFrames. Zenodo. https://doi.org/10.5281/zenodo.xxxxxxxx
+Gao, R., Khan, M., & Viers, J. (2026). A Python Toolkit for Reference Evapotranspiration (ETo) Calculation Directly from Pandas DataFrames (Initial). Zenodo. https://doi.org/10.5281/zenodo.19197914
 
 ## Repository update information
 - Creation date: 2026-03-20
