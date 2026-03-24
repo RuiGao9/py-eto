@@ -55,7 +55,7 @@ $$\gamma=\frac{c_p\cdot P}{\epsilon \cdot \lambda}$$
 
 where:
 - $c_p$: specific heat of moist air, $~1.013 \times 10^{-3}MJ/kg/^\circ C$
-- $\epsilon$: the ratio of molecular weight of water vapor to dry air, $~0.622$
+- $\epsilon$: the ratio of molecular weight of water vapor to dry air, ~$0.622$
 - $\lambda$: the latent heat of vaporization, $2.45~MJ/kg$
 - $P$: atmospheric pressure (kPa), `optional input`
 
@@ -65,15 +65,29 @@ $$P=101.3\times{\frac{293-0.0065\times h}{293}}^{5.26}$$
 
 ## Hargreaves Method (daily)
 
-$$ETo=0.0023 \cdot R_a \cdot (T_{mean}+17.8) \cdot \sqrt{T_{max} - T_{min}}$$
+$$ETo=0.0023 \cdot R_a \cdot (T_{c}+17.8) \cdot \sqrt{T_{max} - T_{min}}$$
 
 where:
 - $0.0023$: the empirical value
 - $T_{max}$: the maximum temperature in that day ($\degree C$)
 - $T_{min}$: the minimum temperature in that day ($\degree C$)
-- $T_{mean}$: the average temperature in that day ($\degree C$)
-- $R_a$: extraterrestrial radiation
+- $T_{c}$: $\frac{T_{max}+T_{min}}{2}$ in that day ($\degree C$)
+- $R_a$: extraterrestrial radiation, which can be estimated by latitude and the day of the year, as explained below:
+$$R_a=\frac{37.6 \cdot d_r \cdot [w_s \cdot sin(\phi_l)sin(\delta) + cos(\phi_l) \cdot sin(w_s)]}{\lambda}$$
 
+$$\delta = 0.4093 \cdot sin(\frac{2 \pi (284+DOY)}{365})$$
+
+$$d_r = 1 + 0.033 \cdot cos(\frac{2 \pi \cdot DOY}{365})$$
+
+$$w_s = cos(tan(\phi_l) \cdot tan(\delta))$$
+
+where:
+- $d_r$: relative distance from the earth to the sun
+- $DOY$: day of the year
+- $w_s$: sunset hour angle (rad)
+- $\phi_l$: latitude (rad)
+- $\delta$: declination of the sun (rad) 
+- $\lambda$: latent heat of vvaporization, $\lambda=2.54 MJ/kg$
 ## Reference
 - Task Committee on Revision of Manual 70. (2016, April). Evaporation, evapotranspiration, and irrigation water requirements. American Society of Civil Engineers.
 - Torres, A. F., Walker, W. R., & McKee, M. (2011). Forecasting daily potential evapotranspiration using machine learning and limited climatic data. Agricultural Water Management, 98(4), 553-562.
