@@ -79,7 +79,7 @@ where:
 - Torres, A. F., Walker, W. R., & McKee, M. (2011). Forecasting daily potential evapotranspiration using machine learning and limited climatic data. Agricultural Water Management, 98(4), 553-562.
 
 ## How to cite this work
-Gao, R., Khan, M., & Viers, J. (2026). A Python Toolkit for Reference Evapotranspiration (ETo) Calculation Directly from Pandas DataFrames (Initial). Zenodo. https://doi.org/10.5281/zenodo.19197914
+Gao, R., Khan, M., & Viers, J. (2026). A Python Toolkit for Reference Evapotranspiration ($ET_o$) Calculation Directly from Pandas DataFrames (Initial). Zenodo. https://doi.org/10.5281/zenodo.19197914
 
 ## Repository update information
 - Creation date: 2026-03-20
