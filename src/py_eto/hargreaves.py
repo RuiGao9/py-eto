@@ -5,11 +5,11 @@ def hargreaves(t_min, t_max, latitude, doy, year=2024):
     """
     Calculate daily reference evapotranspiration using the Hargreaves-Samani (1985) formula.
     Required inputs:
-- t_min: Minimum daily temperature (°C)
-- t_max: Maximum daily temperature (°C)
-- latitude: Latitude of the location (degrees)
-- doy: Day of the year (1-365/366)
-- year: Year (default is 2024)
+    - t_min: Minimum daily temperature (°C)
+    - t_max: Maximum daily temperature (°C)
+    - latitude: Latitude of the location (degrees)
+    - doy: Day of the year (1-365/366)
+    - year: Year (default is 2024)
 
     """
     # Calculate mean temperature
