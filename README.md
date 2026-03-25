@@ -12,7 +12,7 @@ This documentation is structured into two main sections:
 ## How To Use This Repository?
 ### Repository installation
 ```bash
-pip install "git+https://github.com/RuiGao9/py-eto.git" 
+pip install "git+https://github.com/RuiGao9/py_eto.git" 
 ```
 
 ### Import functions
