@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19197914.svg)](https://doi.org/10.5281/zenodo.19197914)
-![Visitors Badge](https://visitor-badge.laobi.icu/badge?page_id=RuiGao9/pyeto)<br>
+![Stars](https://img.shields.io/github/stars/RuiGao9/pyeto?style=social)<br>
 
 # A Python Toolkit for Reference Evapotranspiration ($ET_o$) Calculation Directly from Pandas DataFrames
 This repository provides a standardized Python implementation for estimating reference evapotranspiration ($ET_o$) using two primary methodologies: the ASCE Penman-Monteith (PM) model—supporting both daily and hourly temporal resolutions—and the Hargreaves-Samani empirical equation. Designed for seamless integration with user-provided Pandas DataFrames, the toolkit can be used based on the meteorological data from traditional weather stations or high-frequency observations derived from eddy-covariance flux towers. <br>
